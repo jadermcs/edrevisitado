@@ -15,13 +15,10 @@ class mystack {
 
 template <class T>
 T mystack<T>::popit() {
-    if (isEmpty()) {
+    if (isEmpty())
         throw std::underflow_error("Empty stack");
-    }
-    T val;
     mysize -= 1;
-    val = values[mysize];
-    return val;
+    return values[mysize];
 }
 
 template <class T>
