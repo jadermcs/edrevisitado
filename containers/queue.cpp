@@ -35,11 +35,11 @@ T myqueue<T>::popit() {
 
 template <class T>
 void myqueue<T>::pushit(T item) {
-    int mys = size();
-    if ((qtail+1) % qsize == qhead)
+    int temptail = (qtail+1) % qsize;
+    if (temptail == qhead)
         throw std::overflow_error("Full queue.");
     values[qtail] = item;
-    qtail = (qtail+1) % qsize;
+    qtail = temptail;
 }
 
 int main(int argc, char *argv[])
