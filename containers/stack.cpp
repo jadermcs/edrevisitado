@@ -22,7 +22,7 @@ template <class T>
 T mystack<T>::popit() {
     if (isEmpty())
         throw std::underflow_error("Empty stack.");
-    mysize -= 1;
+    mysize--;
     return values[mysize];
 }
 
@@ -31,7 +31,7 @@ void mystack<T>::pushit(T item) {
     if (mysize+1 > stacksize)
         throw std::overflow_error("Full stack.");
     values[mysize] = item;
-    mysize += 1;
+    mysize++;
 }
 
 int main(int argc, char *argv[])
