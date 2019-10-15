@@ -23,14 +23,14 @@ void mylist<T>::pushit(T val){
     n->value = val;
     n->next = head;
     head = n;
-    sizelist += 1;
+    sizelist++;
 }
 
 template <class T>
 T mylist<T>::popit(){
     T val = head->value;
     head = head->next;
-    sizelist -= 1;
+    sizelist--;
     return val;
 }
 
